@@ -1,0 +1,671 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:
+    Inter,
+    sans-serif;
+
+    background:#050505;
+
+    color:white;
+
+    overflow-x:hidden;
+
+}
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.sky{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        to bottom,
+
+        #07142b,
+
+        #132846,
+
+        #203e63,
+
+        #304f6d
+
+    );
+
+}
+
+.sun{
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    top:8%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:
+
+    radial-gradient(
+
+        rgba(255,255,255,.45),
+
+        rgba(255,255,255,.02),
+
+        transparent
+
+    );
+
+    filter:blur(40px);
+
+}
+
+.cloud{
+
+    position:absolute;
+
+    background:white;
+
+    opacity:.06;
+
+    filter:blur(80px);
+
+}
+
+.cloud1{
+
+    width:700px;
+
+    height:160px;
+
+    top:12%;
+
+    left:-10%;
+
+}
+
+.cloud2{
+
+    width:500px;
+
+    height:130px;
+
+    right:-5%;
+
+    top:25%;
+
+}
+
+.mountain{
+
+    position:absolute;
+
+    width:120%;
+
+    left:-10%;
+
+    bottom:0;
+
+}
+
+.back{
+
+    height:35vh;
+
+    background:#18273d;
+
+    clip-path:
+
+polygon(
+
+0 100%,
+
+12% 48%,
+
+25% 70%,
+
+38% 35%,
+
+54% 65%,
+
+67% 40%,
+
+82% 72%,
+
+100% 45%,
+
+100% 100%
+
+);
+
+}
+
+.middle{
+
+    height:42vh;
+
+    background:#101d31;
+
+    clip-path:
+
+polygon(
+
+0 100%,
+
+8% 65%,
+
+20% 40%,
+
+36% 74%,
+
+50% 28%,
+
+66% 76%,
+
+82% 38%,
+
+100% 72%,
+
+100% 100%
+
+);
+
+}
+
+.front{
+
+    height:48vh;
+
+    background:#08101d;
+
+    clip-path:
+
+polygon(
+
+0 100%,
+
+10% 82%,
+
+22% 44%,
+
+42% 84%,
+
+56% 34%,
+
+71% 78%,
+
+88% 40%,
+
+100% 88%,
+
+100% 100%
+
+);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:20;
+
+    width:min(1100px,90%);
+
+    margin:auto;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.tag{
+
+    color:#8ab4ff;
+
+    font-size:.9rem;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+}
+
+h1{
+
+    margin-top:15px;
+
+    font-size:clamp(3rem,8vw,7rem);
+
+    max-width:900px;
+
+    line-height:.95;
+
+}
+
+.hero p{
+
+    margin-top:25px;
+
+    color:#c7c7c7;
+
+    font-size:1.1rem;
+
+}
+
+.hero a{
+
+    width:max-content;
+
+    margin-top:45px;
+
+    color:white;
+
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    padding:18px 34px;
+
+    border-radius:999px;
+
+    transition:.4s;
+
+}
+
+.hero a:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+#about{
+
+    min-height:100vh;
+
+    padding:150px 10%;
+
+    background:#050505;
+
+}
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+.gradient{
+
+    position:absolute;
+    inset:0;
+
+    background:
+
+linear-gradient(
+
+180deg,
+
+#09172d 0%,
+
+#173457 35%,
+
+#2b587d 65%,
+
+#406a90 100%
+
+);
+
+}
+
+.stars{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:.35;
+
+}
+
+.mountain{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:auto;
+
+    pointer-events:none;
+
+}
+
+.back{
+
+    z-index:2;
+
+}
+
+.middle{
+
+    z-index:5;
+
+}
+
+.front{
+
+    z-index:10;
+
+}
+
+.fog{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    opacity:.55;
+
+    z-index:7;
+
+}
+
+.vignette{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+radial-gradient(
+
+circle,
+
+transparent 45%,
+
+rgba(0,0,0,.55)
+
+);
+
+}
+
+.noise{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.03;
+
+    background-image:url("assets/images/noise.webp");
+
+}
+
+.background{
+
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+
+}
+
+.sky{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #18365c 0%,
+        #274d78 45%,
+        #5f87a6 100%
+    );
+
+    z-index:1;
+
+}
+
+.sun{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:50%;
+    top:-320px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        rgba(255,255,255,.35),
+        rgba(255,255,255,.03),
+        transparent
+    );
+
+    filter:blur(60px);
+
+    z-index:2;
+
+}
+
+.stars{
+
+    position:absolute;
+    inset:0;
+
+    opacity:.15;
+
+    background-image:
+
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#ffffff 1px, transparent 1px);
+
+    background-size:
+        180px 180px,
+        250px 250px;
+
+    background-position:
+        0 0,
+        90px 120px;
+
+    z-index:3;
+
+}
+
+.cloud{
+
+    position:absolute;
+
+    width:130vw;
+
+    max-width:none;
+
+    opacity:.7;
+
+    pointer-events:none;
+
+}
+
+.cloud1{
+
+    top:8vh;
+    left:-15vw;
+
+    z-index:4;
+
+}
+
+.cloud2{
+
+    top:22vh;
+    right:-25vw;
+
+    z-index:5;
+
+}
+
+.cloud3{
+
+    top:38vh;
+    left:-8vw;
+
+    z-index:6;
+
+}
+
+.mountain{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:120vw;
+
+    max-width:none;
+
+    pointer-events:none;
+
+}
+
+.back{
+
+    z-index:10;
+
+}
+
+.middle{
+
+    z-index:20;
+
+}
+
+.front{
+
+    z-index:40;
+
+}
+
+.fog{
+
+    position:absolute;
+
+    bottom:-2%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:120vw;
+
+    opacity:.75;
+
+    z-index:30;
+
+}
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        transparent 55%,
+
+        rgba(5,5,5,.45) 80%,
+
+        #050505 100%
+
+    );
+
+    z-index:60;
+
+}
+
+.noise{
+
+    position:absolute;
+    inset:0;
+
+    opacity:.035;
+
+    background-image:url("assets/images/noise.webp");
+
+    mix-blend-mode:overlay;
+
+    z-index:100;
+
+}

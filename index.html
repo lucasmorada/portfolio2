@@ -2,299 +2,104 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Parallax Mountains</title>
+    <meta charset="UTF-8">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <title>Lucas Siqueira</title>
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html,
-body{
-    width:100%;
-    height:100%;
-    overflow-x:hidden;
-    background:#111b29;
-    font-family:'Montserrat',sans-serif;
-}
-
-body{
-    font-size:99px;
-}
-
-.scrollDist{
-    width:100%;
-    height:200vh;
-}
-
-main{
-    position:fixed;
-    inset:0;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    overflow:hidden;
-}
-
-svg{
-    width:100%;
-    max-width:1200px;
-    height:100%;
-}
-
-text{
-    font-size:120px;
-    letter-spacing:8px;
-}
-
-.arrow{
-    cursor:pointer;
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="scrollDist"></div>
+<header class="hero">
 
-<main>
+    <div class="background">
 
-<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <div class="sky"></div>
 
-<defs>
+    <div class="sun"></div>
 
-<mask id="m">
+    <div class="stars"></div>
 
-<g class="cloud1">
+    <img src="assets/images/cloud-1.webp" class="cloud cloud1">
+    <img src="assets/images/cloud-2.webp" class="cloud cloud2">
+    <img src="assets/images/cloud-3.webp" class="cloud cloud3">
 
-<rect
-fill="#fff"
-width="100%"
-height="801"
-y="799"/>
+    <img src="assets/images/mountain-back.webp" class="mountain back">
 
-<image
-href="https://assets.codepen.io/721952/cloud1Mask.jpg"
-width="1200"
-height="800"/>
+    <img src="assets/images/mountain-middle.webp" class="mountain middle">
 
-</g>
+    <img src="assets/images/fog.webp" class="fog">
 
-</mask>
+    <img src="assets/images/mountain-front.webp" class="mountain front">
 
-</defs>
+    <div class="overlay"></div>
 
-<image
-class="sky"
-href="https://assets.codepen.io/721952/sky.jpg"
-width="1200"
-height="590"/>
+    <div class="noise"></div>
 
-<image
-class="mountBg"
-href="https://assets.codepen.io/721952/mountBg.png"
-width="1200"
-height="800"/>
+</div>
 
-<image
-class="mountMg"
-href="https://assets.codepen.io/721952/mountMg.png"
-width="1200"
-height="800"/>
+    <div class="hero-content">
 
-<image
-class="cloud2"
-href="https://assets.codepen.io/721952/cloud2.png"
-width="1200"
-height="800"/>
+        <span class="tag">
+            Software Engineer
+        </span>
 
-<image
-class="mountFg"
-href="https://assets.codepen.io/721952/mountFg.png"
-width="1200"
-height="800"/>
+        <h1>
 
-<image
-class="cloud1"
-href="https://assets.codepen.io/721952/cloud1.png"
-width="1200"
-height="800"/>
+            Construindo experiências digitais
+            modernas.
 
-<image
-class="cloud3"
-href="https://assets.codepen.io/721952/cloud3.png"
-width="1200"
-height="800"/>
+        </h1>
 
-<text
-fill="#fff"
-x="350"
-y="200">
+        <p>
 
-EXPLORE
+            Desenvolvimento Web • Backend •
+            Cybersecurity
 
-</text>
+        </p>
 
-<polyline
-class="arrow"
-fill="#fff"
-points="599,250 599,289 590,279 590,282 600,292 610,282 610,279 601,289 601,250"/>
+        <a href="#about">
 
-<g mask="url(#m)">
+            Ver Projetos
 
-<rect
-fill="#fff"
-width="100%"
-height="100%"/>
+        </a>
 
-<text
-x="350"
-y="200"
-fill="#162a43">
+    </div>
 
-FURTHER
+</header>
 
-</text>
+<section id="about">
 
-</g>
+    <div class="container">
 
-<rect
-id="arrow-btn"
-width="100"
-height="100"
-opacity="0"
-x="550"
-y="220"
-style="cursor:pointer"/>
+        <h2>
 
-</svg>
+            Sobre mim
 
-</main>
+        </h2>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+        <p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+            Conteúdo aqui...
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+        </p>
 
-<script>
+    </div>
 
-gsap.registerPlugin(
-    ScrollTrigger,
-    ScrollToPlugin
-);
+</section>
 
-gsap.timeline({
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 
-    scrollTrigger:{
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-        trigger:".scrollDist",
-
-        start:"top top",
-
-        end:"bottom bottom",
-
-        scrub:1
-
-    }
-
-})
-
-.fromTo(".sky",
-{y:0},
-{y:-200},
-0)
-
-.fromTo(".cloud1",
-{y:100},
-{y:-800},
-0)
-
-.fromTo(".cloud2",
-{y:-150},
-{y:-500},
-0)
-
-.fromTo(".cloud3",
-{y:-50},
-{y:-650},
-0)
-
-.fromTo(".mountBg",
-{y:-10},
-{y:-100},
-0)
-
-.fromTo(".mountMg",
-{y:-30},
-{y:-250},
-0)
-
-.fromTo(".mountFg",
-{y:-50},
-{y:-600},
-0);
-
-const arrowBtn = document.getElementById("arrow-btn");
-
-arrowBtn.addEventListener("mouseenter",()=>{
-
-    gsap.to(".arrow",{
-
-        y:10,
-
-        duration:0.8,
-
-        ease:"back.inOut(3)"
-
-    });
-
-});
-
-arrowBtn.addEventListener("mouseleave",()=>{
-
-    gsap.to(".arrow",{
-
-        y:0,
-
-        duration:0.5,
-
-        ease:"power3.out"
-
-    });
-
-});
-
-arrowBtn.addEventListener("click",()=>{
-
-    gsap.to(window,{
-
-        scrollTo:window.innerHeight,
-
-        duration:1.5,
-
-        ease:"power1.inOut"
-
-    });
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
