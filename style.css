@@ -38,9 +38,12 @@ body{
 
 .background{
 
-    position:absolute;
+    filter:
 
-    inset:0;
+        saturate(1.1)
+        contrast(1.05);
+        position:absolute;
+        inset:0;
 
 }
 
@@ -72,31 +75,33 @@ body{
 
     position:absolute;
 
-    width:450px;
+    width:800px;
 
-    height:450px;
-
-    border-radius:50%;
-
-    top:8%;
+    height:800px;
 
     left:50%;
 
+    top:-420px;
+
     transform:translateX(-50%);
+
+    border-radius:50%;
 
     background:
 
-    radial-gradient(
+        radial-gradient(
 
-        rgba(255,255,255,.45),
+            rgba(255,245,220,.45),
 
-        rgba(255,255,255,.02),
+            rgba(255,200,120,.12),
 
-        transparent
+            transparent
 
-    );
+        );
 
-    filter:blur(40px);
+    filter:blur(90px);
+
+    z-index:2;
 
 }
 
@@ -248,9 +253,9 @@ polygon(
 
     position:relative;
 
-    z-index:20;
+    z-index:200;
 
-    width:min(1100px,90%);
+    width:min(1200px,90%);
 
     margin:auto;
 
@@ -261,6 +266,10 @@ polygon(
     flex-direction:column;
 
     justify-content:center;
+
+    text-shadow:
+
+        0 10px 40px rgba(0,0,0,.45);
 
 }
 
@@ -421,13 +430,43 @@ linear-gradient(
 
     position:absolute;
 
-    bottom:0;
+    left:50%;
 
-    width:100%;
+    transform:translateX(-50%);
 
-    opacity:.55;
+    width:130vw;
 
-    z-index:7;
+    pointer-events:none;
+
+}
+
+.fog1{
+
+    bottom:-5%;
+
+    opacity:.45;
+
+    z-index:18;
+
+}
+
+.fog2{
+
+    bottom:5%;
+
+    opacity:.25;
+
+    z-index:24;
+
+}
+
+.fog3{
+
+    bottom:12%;
+
+    opacity:.15;
+
+    z-index:28;
 
 }
 
@@ -667,5 +706,158 @@ rgba(0,0,0,.55)
     mix-blend-mode:overlay;
 
     z-index:100;
+
+}
+
+.mountain{
+
+    filter:
+
+        brightness(.92)
+
+        contrast(1.08)
+
+        saturate(1.1);
+
+    transition:filter .4s;
+
+}
+
+.mountain-glow{
+
+    position:absolute;
+
+    left:50%;
+    bottom:18vh;
+
+    width:900px;
+    height:450px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(255,220,170,.18),
+
+            transparent 70%
+
+        );
+
+    filter:blur(80px);
+
+    z-index:8;
+
+}
+
+.vignette{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            transparent 45%,
+
+            rgba(0,0,0,.15) 70%,
+
+            rgba(0,0,0,.55)
+
+        );
+
+    z-index:90;
+
+}
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:80;
+
+    pointer-events:none;
+
+    background-image:
+
+        radial-gradient(
+            rgba(255,255,255,.9) 1px,
+            transparent 1px
+        );
+
+    background-size:120px 120px;
+
+    opacity:.08;
+
+}
+
+.sun-rays{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-350px;
+
+    width:1200px;
+
+    height:900px;
+
+    transform:translateX(-50%);
+
+    background:
+
+        radial-gradient(
+
+            rgba(255,220,150,.15),
+
+            transparent 70%
+
+        );
+
+    filter:blur(120px);
+
+    mix-blend-mode:screen;
+
+    opacity:.5;
+
+    z-index:3;
+
+}
+
+.cinema{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+
+            rgba(0,0,0,.25),
+
+            transparent 30%,
+
+            transparent 70%,
+
+            rgba(0,0,0,.35)
+
+        );
+
+    z-index:999;
 
 }
